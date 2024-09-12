@@ -20,4 +20,14 @@ const Post = () => {
 
 export default Post;
 ```
+### 3. How do you implement nested dynamic routes in Next.js?
+Nested dynamic routes are created by using folder structures with dynamic file names. For example, if you want a route like /category/[categoryId]/post/[postId], you would create the following structure:
+```
+pages/
+  category/
+    [categoryId]/
+      post/
+        [postId].js
+```
+
 
