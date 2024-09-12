@@ -222,7 +222,7 @@ Enable advanced caching strategies using headers and rewrites.
 Set up custom domains for serving images.
 Define environment variables that are optimized during the build.
 ###  29. How does Next.js handle asset caching?
-Next.js automatically adds headers for static assets to be cached efficiently. Assets served from the /public directory have cache-control headers set for long-term caching. For dynamic or regenerated pages, you can control the cache using the revalidate option in ISR or by configuring HTTP headers in next.config.js.
+` automatically adds headers for static assets to be cached efficiently. Assets served from the /public directory have cache-control headers set for long-term caching. For dynamic or regenerated pages, you can control the cache using the revalidate option in ISR or by configuring HTTP headers in next.config.js.
 
 ###  30. What is the difference between server-side rendering (SSR) and client-side rendering (CSR) in Next.js, and how do you optimize for each?
 SSR (Server-Side Rendering): The HTML is generated on the server for each request, ensuring that the page is rendered with data on the server. It’s used when content must be up-to-date on every request.
@@ -231,6 +231,7 @@ To optimize SSR:
 
 - Cache server responses to avoid redundant re-renders.
 - Use getServerSideProps selectively for pages that require dynamic data.
+  
 To optimize CSR:
 
 - Load only the necessary JavaScript for the initial render (code splitting).
