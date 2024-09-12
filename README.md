@@ -7,7 +7,7 @@ Next.js uses a file-based routing system where every file in the pages/ director
 ### 2. How do dynamic routes work in Next.js?
 Dynamic routes in Next.js are created by using square brackets in the file name. For example, to create a route like /post/123, you would create a file pages/post/[id].js. Inside the component, you can access the dynamic parameter (id) using useRouter() from next/router or getStaticProps.
 Example:
-```
+```js
 // pages/post/[id].js
 import { useRouter } from 'next/router';
 
@@ -22,7 +22,7 @@ export default Post;
 ```
 ### 3. How do you implement nested dynamic routes in Next.js?
 Nested dynamic routes are created by using folder structures with dynamic file names. For example, if you want a route like /category/[categoryId]/post/[postId], you would create the following structure:
-```
+```js
 pages/
   category/
     [categoryId]/
@@ -35,7 +35,7 @@ Then, both categoryId and postId can be accessed using useRouter().
 Catch-all routes in Next.js allow you to match multiple segments of a URL. They are created by adding [...] to the filename, like pages/blog/[...slug].js. This route will match any number of segments, like /blog/a/b/c. Inside the component, slug will be an array of URL segments.
 
 Example:
-```
+```js
 // pages/blog/[...slug].js
 import { useRouter } from 'next/router';
 
@@ -55,7 +55,7 @@ export default Blog;
 Shallow routing allows you to change the URL without re-running data-fetching methods such as getStaticProps or getServerSideProps. This is useful for updating the query string or URL parameters without reloading the page content.
 
 Example:
-```
+```js
 // Using shallow routing
 router.push('/about?name=John', undefined, { shallow: true });
 ```
@@ -69,8 +69,8 @@ Next.js automatically prefetches links when they are visible in the viewport usi
 Example:
 ```js
 <Link href="/about" prefetch={true}>About Us</Link>
-You can also disable prefetching by setting prefetch={false}.
 ```
+You can also disable prefetching by setting prefetch={false}.
 
 
 
