@@ -50,4 +50,27 @@ export default Blog;
 
 ```
 
+###  5. Explain the difference between shallow routing and normal routing in Next.js.
+
+Shallow routing allows you to change the URL without re-running data-fetching methods such as getStaticProps or getServerSideProps. This is useful for updating the query string or URL parameters without reloading the page content.
+
+Example:
+```
+// Using shallow routing
+router.push('/about?name=John', undefined, { shallow: true });
+```
+Normal routing, on the other hand, triggers a full re-render and re-runs data fetching methods.
+
+
+### 6. How can you implement route prefetching in Next.js?
+
+Next.js automatically prefetches links when they are visible in the viewport using the next/link component. Prefetching means that the page’s resources (like JavaScript) are downloaded in the background so that when the user clicks the link, the page loads faster.
+
+Example:
+```js
+<Link href="/about" prefetch={true}>About Us</Link>
+You can also disable prefetching by setting prefetch={false}.
+```
+
+
 
