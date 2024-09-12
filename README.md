@@ -29,5 +29,25 @@ pages/
       post/
         [postId].js
 ```
+Then, both categoryId and postId can be accessed using useRouter().
+
+### 4. What are catch-all routes, and when would you use them in Next.js?
+Catch-all routes in Next.js allow you to match multiple segments of a URL. They are created by adding [...] to the filename, like pages/blog/[...slug].js. This route will match any number of segments, like /blog/a/b/c. Inside the component, slug will be an array of URL segments.
+
+Example:
+```
+// pages/blog/[...slug].js
+import { useRouter } from 'next/router';
+
+const Blog = () => {
+  const router = useRouter();
+  const { slug } = router.query; // ['a', 'b', 'c'] for /blog/a/b/c
+
+  return <p>Slug: {slug?.join('/')}</p>;
+};
+
+export default Blog;
+
+```
 
 
